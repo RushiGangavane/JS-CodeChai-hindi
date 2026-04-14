@@ -65,3 +65,26 @@ console.log(typeof person1) // object
 console.log(typeof bigInt1) // bigint
 
 
+// ************************* 
+
+// stack (primitive datatypes) and heap (reference datatypes) memory in JavaScript 
+// The stack is a simple data structure that stores values in a last-in-first-out (LIFO) manner, 
+// while the heap is a more complex data structure that allows for dynamic memory allocation and deallocation.
+
+let x= 10
+let y= x // y is assigned the value of x, which is 10
+y= 20 // changing the value of y does not affect x because they are stored in different memory locations in the stack
+
+console.log(y) // 20
+console.log(x) // 10
+
+let userOne ={
+    name: "Rushikesh",
+    age : 28
+}
+
+let userTwo=userOne // userTwo is assigned the reference of userOne, which points to the same object in memory
+userTwo.name="Brezza car"
+
+console.log(userOne.name) // "Brezza car" : because userOne and userTwo are referencing the same object in memory, so when we change the name property of userTwo, it also changes the name property of userOne. This is because both userOne and userTwo are referencing the same object in memory, and any changes made to that object will be reflected in both variables.
+console.log(userTwo.name) // "Brezza car" : because userTwo is referencing the same object in memory as userOne, so when we change the name property of userTwo, it also changes the name property of userOne. This is because both userOne and userTwo are referencing the same object in memory, and any changes made to that object will be reflected in both variables.
